@@ -13,17 +13,17 @@ GET http://localhost:9000/api/restaurantes HTTP/1.1
 
 ###
 
-GET http://localhost:9000/api/users/645030a827324e7ebdd2000e HTTP/1.1
+GET http://localhost:9000/api/restaurantes/6450309827324e7ebdd2000c HTTP/1.1
 
 ###
-PUT http://localhost:9000/api/users/6450309827324e7ebdd2000c HTTP/1.1
+PUT http://localhost:9000/api/restaurantes/645030a827324e7ebdd2000e HTTP/1.1
 Content-Type: application/json
 
 {
    
-    "name": "KFC",
+    "name": "WND",
     "email": "Messi10@gmail.com"
 }
 
 ###
-DELETE http://localhost:9000/api/users/64502d00f69154f6862a3f4e HTTP/1.1
+DELETE http://localhost:9000/api/restaurantes/645030a827324e7ebdd2000e HTTP/1.1
