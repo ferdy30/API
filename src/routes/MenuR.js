@@ -1,62 +1,59 @@
 const express = require("express");
 const { route } = require("express/lib/application");
-const Schema = require('../models/model.js')
+const Schema = require('../models/menuModel')
 
 
 
+const router = express.Router();
 
 //CREAR INFORMACION 
-
-exports.add = async(req, res) =>{
-
+router.post('/menu', (req, res)=> {
    const user = Schema(req.body);
    user.save()
    .then((data) => res.json(data))
    .catch((error) => res.json({message : error}))
+});
 
-}
+//Obtener informacion 
 
-//OBTENER INFORMACION 
-
-exports.list = async(req, res) =>{
+router.get('/menu', (req, res)=> {
     Schema
     .find()
     .then((data) => res.json(data))
     .catch((error) => res.json({message : error}))
- }
+ });
 
 //OBTENER INFORMACION POR ID
 
-exports.show = async(req, res) =>{
+router.get('/menu/:id', (req, res)=> {
     const {id} = req.params;
     Schema
     .findById(id)
     .then((data) => res.json(data))
     .catch((error) => res.json({message : error}))
- }
+ });
 
 
  // ACTUALIZAR INFO
-exports.update = async (req, res, next) =>{
-   
+ router.put('/menu/:id', (req, res)=> {
+
     const {id} = req.params;
-    const {name,logo,banner,menu} = req.body
+    const {name,type, description, price, image} = req.body
     Schema
-    .updateOne({_id:id},{ $set: {name, logo, banner,menu}})
+    .updateOne({_id:id},{ $set: {name, type, description, price, image}})
     .then((data) => res.json(data))
     .catch((error) => res.json({message : error}))
- }
-
-
+ });
 
 //ELIMINAR
-exports.delete = async (req, res, next) =>{
+ router.delete('/menu/:id', (req, res)=> {
     const {id} = req.params;
-  
+
     Schema
     .deleteOne({_id: id})
     .then((data) => res.json(data))
     .catch((error) => res.json({message : error}))
- }
+ });
 
 
+module.exports = router;

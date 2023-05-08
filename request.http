@@ -3,13 +3,80 @@ POST http://localhost:9000/api/restaurantes HTTP/1.1
 Content-Type: application/json
 
 {
-    
-    "name": "BurguerKing",
-    "email": "lovojuarez10@gmail.com"
+            "_id": "4",
+            "name": "Burguer King",
+            "description":"HAMBURGUESA",
+            "number":"22080846",
+            "latitud": 13.7153193,
+            "longitud":  -89.1435663,
+            "logo": "https://scontent.fsal5-1.fna.fbcdn.net/v/t39.30808-6/178178598_3932451870198863_4730067510888218770_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HfInDgP6xfEAX9KXQUU&_nc_ht=scontent.fsal5-1.fna&oh=00_AfCX2ygClYMRJnbBvy1COslPcth5XRZIE76Ho5g26U7NDg&oe=645EA81F",
+            "banner": "https://github.com/Jaredromero1/ProyectoCatedra_Dps/blob/JaredR/assets/burgerKing.jpg?raw=true",
+            "menu": [ 
+                {
+                      "id": "1",
+                     "name": "Whopper",
+                      "description": "Carne de res 4 oz. Asada a la parrilla y frescos vegetales.",
+                      "price": 6.99,
+                      "image": "https://bk-latam-prod.s3.amazonaws.com/sites/burgerking.latam/files/BK_Web_WHOPPER_500X540px.png"
+                  },
+                  {
+                     "id": "2",
+                     "name": "Whopper doble",
+                      "description": "8 oz. De carne de res asada a la parrilla y frescos vegetales.",
+                      "price": 7.99,
+                      "image": "https://burgerkingec.com/wp-content/uploads/2020/05/Texas-Doble-Whopper.png"
+                  },{
+                     "id": "3",
+                     "name": "Big King",
+                      "description": "Doble carne de res 2oz. Queso americano, nuestra salsa stacker y vegetales.",
+                      "price": 4.99,
+                      "image": "https://s3.eu-central-1.amazonaws.com/www.burgerking.com.mx/wp-content/uploads/sites/3/2021/02/24092120/1200x800_14_BigKing-1-1.png"
+                  },
+                  {
+                    "id": "4",
+                     "name": "SteakHouse",
+                      "description": "Carne de res de 7 oz. Asada a la parrilla, queso americano, cebolla crispy y vegetales",
+                      "price": 8.99,
+                      "image": "https://bk-latam-prod.s3.amazonaws.com/sites/burgerking.latam/files/BK_Web_steakhouse_500X540px.png"
+                  }
+               ],
+            
+               
+            "ubicacion": {
+                     "Id": 4,
+                     "Name": "Burguer King",
+                     "category": "Restaurant"  
+           } 
+            
+}
+###
+POST http://localhost:9000/api/menu HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "burguer",
+    "logo": "logo.com",
+    "banner": "banner.png",
+    "menu": {
+    "name": "burguer",
+    "type": "logo.com",
+    "description": "banner.png",
+    "price": "menu",
+    "image": "image.png"
+     {
+    "name": "burguer",
+    "type": "logo.com",
+    "description": "banner.png",
+    "price": "menu",
+    "image": "image.png"
+             },
+             },
+            
+    "imagen": "image.png"
 }
 
 ###
-GET http://localhost:9000/api/restaurantes HTTP/1.1
+GET  http://localhost:9000/api/restaurantes HTTP/1.1
 
 ###
 
@@ -26,4 +93,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:9000/api/restaurantes/645030a827324e7ebdd2000e HTTP/1.1
+DELETE http://localhost:9000/api/restaurantes/1 HTTP/1.1

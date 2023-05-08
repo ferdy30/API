@@ -5,7 +5,10 @@ const cors = require('cors');
 const morgan = require('morgan');
 
 require("dotenv").config();
+
+//OBTENCION DE RUTAS
 const Rutas = require("./routes/route.js")
+const MenuRutas = require("./routes/MenuR.js")
 
 
 const app = express();
@@ -14,10 +17,9 @@ app.set('json spaces', 2);
 
 //MIDDLEWARE
 app.use(morgan('dev'));
-
 app.use(express.json());
-app.use('/api', Rutas) 
-
+app.use('/api', Rutas)
+app.use('/api', MenuRutas) 
 app.use(cors());
 
 //RUTAS
