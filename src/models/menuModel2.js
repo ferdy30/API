@@ -3,13 +3,13 @@ const MenuSchema = mongoose.Schema(
 
 {
     
-    name: {
+    _id: {
         type: String,
         required: true,
     },
-    type: {
-        type : String,
-    
+    name: {
+        type: String,
+        required: true,
     },
     description: {
         type : String,
@@ -24,4 +24,4 @@ const MenuSchema = mongoose.Schema(
 }
 );
 
-module.exports = mongoose.model('menu', MenuSchema);
+module.exports = mongoose.model('menu2', MenuSchema);

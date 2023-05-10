@@ -1,13 +1,13 @@
 const express = require("express");
 const { route } = require("express/lib/application");
-const Schema = require('../models/model.js')
+const Schema = require('../models/menuModel2')
 
 
 
 const router = express.Router();
 
 //CREAR INFORMACION 
-router.post('/restaurantes', (req, res)=> {
+router.post('/menu', (req, res)=> {
    const user = Schema(req.body);
    user.save()
    .then((data) => res.json(data))
@@ -16,7 +16,7 @@ router.post('/restaurantes', (req, res)=> {
 
 //Obtener informacion 
 
-router.get('/restaurantes', (req, res)=> {
+router.get('/menu', (req, res)=> {
     Schema
     .find()
     .then((data) => res.json(data))
@@ -25,7 +25,7 @@ router.get('/restaurantes', (req, res)=> {
 
 //OBTENER INFORMACION POR ID
 
-router.get('/users/:id', (req, res)=> {
+router.get('/menu/:id', (req, res)=> {
     const {id} = req.params;
     Schema
     .findById(id)
@@ -35,18 +35,18 @@ router.get('/users/:id', (req, res)=> {
 
 
  // ACTUALIZAR INFO
- router.put('/users/:id', (req, res)=> {
+ router.put('/menu/:id', (req, res)=> {
 
     const {id} = req.params;
-    const {name,email} = req.body
+    const {name,type, description, price, image} = req.body
     Schema
-    .updateOne({_id:id},{ $set: {name, email}})
+    .updateOne({_id:id},{ $set: {name, type, description, price, image}})
     .then((data) => res.json(data))
     .catch((error) => res.json({message : error}))
  });
 
 //ELIMINAR
- router.delete('/users/:id', (req, res)=> {
+ router.delete('/menu/:id', (req, res)=> {
     const {id} = req.params;
 
     Schema

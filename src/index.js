@@ -9,6 +9,11 @@ require("dotenv").config();
 //OBTENCION DE RUTAS
 const Rutas = require("./routes/route.js")
 const MenuRutas = require("./routes/MenuR.js")
+const MenuRutas2 = require("./routes/Menu2.js")
+const MenuRutas3 = require("./routes/Menu3.js")
+const MenuRutas4 = require("./routes/Menu4.js")
+
+
 
 
 const app = express();
@@ -19,7 +24,11 @@ app.set('json spaces', 2);
 app.use(morgan('dev'));
 app.use(express.json());
 app.use('/api', Rutas)
-app.use('/api', MenuRutas) 
+app.use('/api/restaurantes/1', MenuRutas) 
+app.use('/api/restaurantes/2', MenuRutas2) 
+app.use('/api/restaurantes/3', MenuRutas3)
+app.use('/api/restaurantes/4', MenuRutas4)
+
 app.use(cors());
 
 //RUTAS

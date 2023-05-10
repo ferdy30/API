@@ -1,9 +1,9 @@
 const mongoose = require("mongoose")
-const MenuSchema = require("./menuModel")
+const MenuSchema = require("./menuModel1")
 const Schema = mongoose.Schema(
 {
     _id: {
-        type: String,
+        type: Number,
         required: true,
     },
     name: {
