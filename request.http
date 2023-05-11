@@ -4,74 +4,61 @@ Content-Type: application/json
 
 
 ###
-POST http://localhost:9000/api/restaurantes/4/menu HTTP/1.1
+POST http://localhost:9000/api/restaurant HTTP/1.1
 Content-Type: application/json
 
 {
-        "_id": 4,
-        "name": "SteakHouse",
-        "description": "Carne de res de 7 oz. Asada a la parrilla, queso americano, cebolla crispy y vegetales",
-        "price": 8.99,
-        "image": "https://bk-latam-prod.s3.amazonaws.com/sites/burgerking.latam/files/BK_Web_steakhouse_500X540px.png"
+    "_id": 4,
+    "name": "Burguer King",
+    "description": "HAMBURGUESA",
+    "number": "22080846",
+    "latitud": 13.7153193,
+    "longitud": -89.1435663,
+    "logo": "https://scontent.fsal5-1.fna.fbcdn.net/v/t39.30808-6/178178598_3932451870198863_4730067510888218770_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HfInDgP6xfEAX9KXQUU&_nc_ht=scontent.fsal5-1.fna&oh=00_AfCX2ygClYMRJnbBvy1COslPcth5XRZIE76Ho5g26U7NDg&oe=645EA81F",
+    "banner": "https://github.com/Jaredromero1/ProyectoCatedra_Dps/blob/JaredR/assets/burgerKing.jpg?raw=true"
 } 
 
 ###
 GET   HTTP/1.1
-
+ {
+    "_id": "2",
+    "name": "Banquete Hut Cheese",
+    "description": "Pizza Hut Cheese (Orilla rellena de quezo mozzarella)",
+    "price": "18",
+    "image": "https://d1ralsognjng37.cloudfront.net/6f59db1e-8811-40c5-a9fd-dbf69d102465.jpeg",
+    "__v": 0
+  },
+  {
+    "_id": "3",
+    "name": "Dúo de Pizzas",
+    "description": "Soda lata 355ml y papas medianas",
+    "price": "22",
+    "image": "https://cdn.tictuk.com/54ba3242-0dba-c43a-da34-af196adc2a13/static-images/LANDING-PH_05.jpg",
+    "__v": 0
+  },
+  {
+    "_id": "4",
+    "name": "Banquete Pizza Ingrediente",
+    "description": "Pizza de 1 Ingrediente más un complemento",
+    "price": "14",
+    "image": "https://tb-static.uber.com/prod/image-proc/processed_images/7e71c4f497fbdaa3e0787bd7d522d0b6/5954bcb006b10dbfd0bc160f6370faf3.jpeg",
+    "__v": 0
+  }
 ###
 
 GET http://localhost:9000/api/restaurantes/6450309827324e7ebdd2000c HTTP/1.1
 
 ###
-PUT https://yaa.onrender.com/api/restaurantes/2 HTTP/1.1
+PUT https://yaa.onrender.com/api/restaurantes/2/menu/1 HTTP/1.1
 Content-Type: application/json
 
 {
-    "_id": 2,
-    "name": "Pizza Hut",
-    "description": "PIZZA",
-    "number": "22577777",
-    "latitud": 13.7158175,
-    "longitud": -89.1504684,
-    "logo": "https://upload.wikimedia.org/wikipedia/sco/thumb/d/d2/Pizza_Hut_logo.svg/2177px-Pizza_Hut_logo.svg.png",
-    "banner": "https://raw.githubusercontent.com/Jaredromero1/ProyectoCatedra_Dps/JaredR/assets/Pizza.png",
-    "menu": [
-      {
-        "id": 1,
-        "name": "Banquete Pizza Especialidad",
-        "description": "Pizza de Especialidad más un complemento",
-        "price": 15.95,
-        "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fhistorico.elsalvador.com%2Fhistorico%2F145633%2Fpizza-hut-trae-la-nueva-pizza-4-xtrema.html&psig=AOvVaw1bxxkXLC20cOdCiwcal9Cz&ust=1683669119542000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCMjI06va5v4CFQAAAAAdAAAAABAZ"
-      },
-      {
-        "id": 2,
-        "name": "Banquete Hut Cheese",
-        "description": "Pizza Hut Cheese (Orilla rellena de quezo mozzarella)",
-        "price": 18,
-        "image": "https://d1ralsognjng37.cloudfront.net/6f59db1e-8811-40c5-a9fd-dbf69d102465.jpeg"
-      },
-      {
-        "id": 3,
-        "name": "Dúo de Pizzas",
-        "description": "Soda lata 355ml y papas medianas",
-        "price": 22,
-        "image": "https://cdn.tictuk.com/54ba3242-0dba-c43a-da34-af196adc2a13/static-images/LANDING-PH_05.jpg"
-      },
-      {
-        "id": 4,
-        "name": "Banquete Pizza Ingrediente",
-        "description": "Pizza de 1 Ingrediente más un complemento",
-        "price": 14,
-        "image": "https://tb-static.uber.com/prod/image-proc/processed_images/7e71c4f497fbdaa3e0787bd7d522d0b6/5954bcb006b10dbfd0bc160f6370faf3.jpeg"
-      }
-    ],
-               
-            "ubicacion": {
-                     "Id": 2,
-                     "Name": "Pizza Hut",
-                     "category": "Restaurant"  
-           } 
+    "_id": "1",
+    "name": "Banquete Pizza Especialidad",
+    "description": "Pizza de Especialidad más un complemento",
+    "price": "15.95",
+    "image": "https://tb-static.uber.com/prod/image-proc/processed_images/a6bf36d802cb10cd99f4966a958d8e8f/5954bcb006b10dbfd0bc160f6370faf3.jpeg",
 }
 
 ###
-DELETE http://localhost:9000/api/restaurantes/3/menu/1 HTTP/1.1
+DELETE https://yaa.onrender.com/api/restaurantes/2/menu/1 HTTP/1.1

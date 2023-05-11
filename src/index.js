@@ -12,6 +12,8 @@ const MenuRutas = require("./routes/MenuR.js")
 const MenuRutas2 = require("./routes/Menu2.js")
 const MenuRutas3 = require("./routes/Menu3.js")
 const MenuRutas4 = require("./routes/Menu4.js")
+const restaurant = require("./routes/Restaurante.js")
+
 
 
 
@@ -28,6 +30,7 @@ app.use('/api/restaurantes/1', MenuRutas)
 app.use('/api/restaurantes/2', MenuRutas2) 
 app.use('/api/restaurantes/3', MenuRutas3)
 app.use('/api/restaurantes/4', MenuRutas4)
+app.use('/api', restaurant)
 
 app.use(cors());
 
